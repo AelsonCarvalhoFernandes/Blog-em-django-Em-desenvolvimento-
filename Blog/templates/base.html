@@ -14,9 +14,9 @@
             <div>
                 <h2>Blog em django</h2>
             </div>
-            {% if user_is_autenticated %}
+            {% if user.is_authenticated %}
                 <div id="entrarSair">
-                    <a id="entrar" href="/logout">Sair</a>
+                    <a id="entrar" href="logout">Sair</a>
                 </div>
             {% else %}
                 <div id="entrarSair">

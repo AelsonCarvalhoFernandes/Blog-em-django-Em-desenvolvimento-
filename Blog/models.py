@@ -1,6 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+tags = (
+    ('P', 'Programador'),
+    ('D', 'Designer'),
+    ('N', 'Faço nada'),
+    ('C', 'Comedor de casadas'),
+)
+
 class Post(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     banner = models.FileField(upload_to='media/img_post')
@@ -14,6 +21,18 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Perfil(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=User, limit_choices_to={'is_staff': True})
+    tag = models.CharField(max_length=2, choices=tags, default='N')
+    image_perfil = models.FileField(upload_to='Perfil_User')
+    bio = models.TextField(max_length=400)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Comentarios(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=User, limit_choices_to={'is_staff': True})
+    content = models.TextField(max_length=500, null=False, blank=False)
+    updated_at = models.DateTimeField(auto_now=True)
     
 
 

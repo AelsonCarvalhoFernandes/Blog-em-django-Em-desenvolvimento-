@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+    <form id="cadastroform" method="POST">
+        {% csrf_token %}
+        <div class="divcadform">
+            <label for="username">Username:</label>
+            <input id="username" name="username" type="text" class="forminput" value="{{dados.username}}">
+        </div>
+        <div class="divcadform">
+            <label for="repetirpassword">Senha:</label>
+            <input type="password" id="repetirpassword" name="password" class="forminput">
+        </div>
+        <div>
+            <input type="submit" value="Entrar" id="buttoncadastro">
+        </div>
+    </form>
+{% endblock %}
