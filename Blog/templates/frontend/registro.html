@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Registro {% endblock %}
+
+{% block content %}
+    <form id="cadastroform" method="POST">
+        {% csrf_token %}
+        <div class="divcadform">
+            <label for="username">Username:</label>
+            <input id="username" name="username" type="text" class="forminput">
+        </div>
+        <div class="divcadform">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" class="forminput">
+        </div>
+        <div class="divcadform">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" class="forminput">
+        </div>
+        <div class="divcadform">
+            <label for="repetirpassword">Repetir a senha:</label>
+            <input type="password" id="repetirpassword" name="repetirpassword" class="forminput">
+        </div>
+        <div>
+            <input type="submit" value="Cadastrar" id="buttoncadastro">
+        </div>
+    </form>
+{% endblock %}

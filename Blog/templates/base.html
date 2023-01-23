@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div id="cabecalho">
+            <div>
+                <h2>Blog em django</h2>
+            </div>
+            {% if user_is_autenticated %}
+                <div id="entrarSair">
+                    <a id="entrar" href="/logout">Sair</a>
+                </div>
+            {% else %}
+                <div id="entrarSair">
+                    <a id="entrar" href="/login">Entrar</a>
+                    <a id="registrar" href="registro">Criar conta</a>
+                </div>
+            {% endif %}
+        </div>
+        <div>
+            <nav>
+                <img src="{% static 'img/blogIcons/menu.png' %}" alt="menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>@ Aelson Carvalho</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: rgba(10, 21, 177, 0.664);
+    color: white;
+}
+
+#cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+#entrarSair{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#entrar {
+    text-decoration: none;
+    color: white;
+    padding: 4px;
+    font-size: 1.1em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 4px;
+}
+
+#registrar{
+    text-decoration: none;
+    color: white;
+    font-size: 0.6em;
+    border-radius: 4px;
+    margin-top: 4px;
+    padding: 4px;
+}
+
+#entrarSair a:hover{
+    color: black;
+    background-color: white;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    display: none;
+}
+nav ul li{
+    padding: 2px;
+    margin: 2px;
+}
+nav ul a{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+nav ul a:hover{
+    background-color: white;
+    color: black;
+}
+
+#formpesquisa{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+    border-width: 1px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+#divformpesquisa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#pesquisa{
+    width: 350px;
+    font-size: 1.2em;
+    border-style: none;
+}
+
+#pesquisa:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+#buttonpesquisa{
+    border-style: none;
+}
+
+
+#iconpesquisa{
+    width: 25px;
+}
+
+footer{
+    background-color: rgba(10, 21, 177, 0.664);
+    color: white;
+}
+
+#post{
+    margin: 15px;
+    background-color: rgb(161, 168, 175);
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#post a{
+    text-decoration: none;
+    color: black;
+}
+
+#postimg{
+    width: 350px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+#cadastroform{
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.divcadform{
+    display: flex;
+    flex-direction: column;
+    width: 360;
+    margin: 10px;
+}
+
+.forminput{
+    width: 270px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+#buttoncadastro{
+    font-size: 1.3em;
+    padding: 4px;
+    color: white;
+    background-color: rgb(2, 196, 2);
+    border-radius: 2px;
+}

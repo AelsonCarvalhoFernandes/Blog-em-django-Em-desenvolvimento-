@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div id="divformpesquisa">
+        <form id="formpesquisa" method="POST">
+            {% csrf_token %}
+            <label for="pesquisa" hidden>Pesquisa</label>
+            <input name="pesquisa" id="pesquisa" type="text" placeholder="Pesquisa">
+            <button id="buttonpesquisa" type="submit"><img id="iconpesquisa" src="{% static 'img/blogIcons/pesquisa.png' %}" alt="Icone de pesquisa"></button>
+        </form>
+    </div>
+    {% for post in posts %}
+        <div id="post">
+            <a href="/{{post.slug}}"><img id="postimg" src="{{post.banner.url}}" alt="Post Banner"></a>
+            <a href="/{{post.slug}}">
+                <div>
+                    <h3>{{post.title}}</h3>
+                    <p>{{post.resume}}</p>
+                    <small>Autor: {{post.auth}} | Data: {{post.created_at}} | Ultima Atualização: {{post.updated_at}}</small>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+    <div id="paginator">
+        {% if posts.has_previous %}
+            <a class="paginatorbutton" href="?page={{posts.previous_page_number}}">Anterior</a>
+        {% endif %}
+            <span>{{posts.number}} de {{posts.paginator.num_pages}}</span>
+        {% if posts.has_next%}
+            <a  class="paginatorbutton" href="?page={{posts.next_page_number}}">Proximo</a>
+        {% endif %}
+        {% endblock %}
+    </div>
