@@ -10,3 +10,11 @@ menu.addEventListener('click', ()=>{
         menu.src = "static/img/blogIcons/menu.png"
     }
 })
+
+window.addEventListener('resize', display)
+
+function display(){
+    if (ul.style.display == 'none'){
+        ul.style.display = 'flex'
+    }
+}

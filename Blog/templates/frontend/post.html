@@ -4,8 +4,14 @@
 
 {% block content %}
 <div id="postagem">
-    <img src="{{post.banner.url}}" alt="banner">
-    <h2>{{post.title}}</h2>
+    <div id="imgpostagem">
+        <img src="{{post.banner.url}}" alt="banner">
+    </div>
+
+        <div id="titulopostagem">
+            <h2>{{post.title}}</h2>
+        </div>
+    
     <p>{{post.content}}</p>
 </div>
 <div id="comentarios">
@@ -25,24 +31,24 @@
             </div>
         </div>
         {% for comentario in comentarios %}
-            <div>
-                <div>
-                    <img src="#" alt="Imagem de usuário">
+            <div id="usercomentario">
+                <div class="usercomentarioclass">
+                    <img id="user_img" src="static/img/userImg/userimage.png" alt="Imagem de usuário">
                     <p>{{comentario.user}}</p>
                 </div>
-                <div>
+                <div class="usercomentarioclass usercomentarioclass_2">
                     <p>{{comentario.content}}</p>
                 </div>
             </div>
         {% endfor %}
     {% else %}
         {% for comentario in comentarios %}
-            <div>
-                <div>
-                    <img src="#" alt="Imagem de usuário">
+            <div id="usercomentario">
+                <div class="usercomentarioclass">
+                    <img id="user_img" src="static/img/userImg/userimage.png" alt="Imagem de usuário">
                     <p>{{comentario.user}}</p>
                 </div>
-                <div>
+                <div class="usercomentarioclass usercomentarioclass_2">
                     <p>{{comentario.content}}</p>
                 </div>
             </div>

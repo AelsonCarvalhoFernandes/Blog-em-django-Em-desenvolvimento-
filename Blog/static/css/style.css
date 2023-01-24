@@ -177,6 +177,66 @@ footer{
     border-radius: 2px;
 }
 
+#postagem p{
+    text-align: justify;
+}
+
+#imgpostagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#postagem img{
+    width: 350px;
+    border-radius: 5px;
+}
+
+#titulopostagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px black;
+    border-radius: 10px;
+}
+
+#comentarios{
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+#usercomentario{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgba(10, 22, 185, 0.664);
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.usercomentarioclass{
+    margin: 2px;
+    border: solid white 1px;
+    border-radius: 10px;
+    min-height: 60px;
+    padding: 5px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.usercomentarioclass_2{
+    justify-content: start;
+    align-items: flex-start;
+    min-height: 30px;
+}
+
+#user_img{
+    width: 30px;
+}
+
 @media (min-width: 620px){
     nav{
         flex-direction: row;
@@ -194,6 +254,11 @@ footer{
         align-items: center;
         padding: 8px;
     }
+
+    #postagem img{
+        width: 600px;
+        height: 300px;
+    }
 }
 
 @media (min-width:900px){
@@ -204,5 +269,10 @@ footer{
     #postimg{
         width: 250px;
         margin-right: 10px;
+    }
+
+    #postagem img{
+        width: 900px;
+        height: 400px;
     }
 }
