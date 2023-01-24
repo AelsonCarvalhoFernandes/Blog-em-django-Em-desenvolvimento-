@@ -29,8 +29,9 @@ class Perfil(models.Model):
     bio = models.TextField(max_length=400)
     updated_at = models.DateTimeField(auto_now=True)
 
-class Comentarios(models.Model):
+class Comentario(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=User, limit_choices_to={'is_staff': True})
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, default=Post)
     content = models.TextField(max_length=500, null=False, blank=False)
     updated_at = models.DateTimeField(auto_now=True)
     

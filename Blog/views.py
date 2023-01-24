@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
-from Blog.models import Post
+from Blog.models import Post, Comentario
 from django.contrib.auth import login as dj_login, authenticate, logout as dj_logout
 from django.contrib.auth.models import User
 
@@ -23,7 +23,18 @@ def index(request):
 
 def post(request, slug):
     post = get_object_or_404(Post, slug = slug )
-    return render(request, 'frontend/post.html', {'post':post})
+    comentarios = Comentario.objects.filter(post_id = post)
+    if request.method == 'GET':
+        return render(request, 'frontend/post.html', {'post':post, 'comentarios':comentarios})
+
+    else:
+        user = request.user
+        postid = request.POST.get('postid')
+        comentario = request.POST.get('comentario')
+        coment = Comentario.objects.create(content = comentario, post_id = postid, user = user)
+        coment.save()
+
+        return redirect(f'post/{post.slug}')
 
 
 # Autenticação ------------------------------------------------------------------------------------------------------

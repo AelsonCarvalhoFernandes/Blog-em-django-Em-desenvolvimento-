@@ -5,7 +5,7 @@
 }
 
 header{
-    background-color: rgba(10, 21, 177, 0.664);
+    background-color: rgba(10, 22, 185, 0.664);
     color: white;
 }
 
@@ -24,6 +24,7 @@ header{
 }
 
 #entrar {
+    background-color: orange;
     text-decoration: none;
     color: white;
     padding: 4px;
@@ -44,8 +45,8 @@ header{
 }
 
 #entrarSair a:hover{
-    color: black;
-    background-color: white;
+    color: rgb(255, 255, 255);
+    background-color: rgb(250, 184, 62);
 }
 nav{
     display: flex;
@@ -174,4 +175,34 @@ footer{
     color: white;
     background-color: rgb(2, 196, 2);
     border-radius: 2px;
+}
+
+@media (min-width: 620px){
+    nav{
+        flex-direction: row;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    nav img{
+        display: none;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        padding: 8px;
+    }
+}
+
+@media (min-width:900px){
+    #post{
+        display: flex;
+        flex-direction: row;
+    }
+    #postimg{
+        width: 250px;
+        margin-right: 10px;
+    }
 }

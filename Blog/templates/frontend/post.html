@@ -9,6 +9,44 @@
     <p>{{post.content}}</p>
 </div>
 <div id="comentarios">
-
+    {% if user.is_authenticated %}
+        <div>
+            {% csrf_token %}
+            <img src="{{Perfil.image.url}}" alt="Imagem de usuário">
+            <div>
+                <p>{{User.username}}</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
+                    <input type="text" name="postid" value="{{post.id}}">
+                    <input type="text" value="{{auth.id}}">
+                    <button type="submit"> Postar </button>
+                </form>
+            </div>
+        </div>
+        {% for comentario in comentarios %}
+            <div>
+                <div>
+                    <img src="#" alt="Imagem de usuário">
+                    <p>{{comentario.user}}</p>
+                </div>
+                <div>
+                    <p>{{comentario.content}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        {% for comentario in comentarios %}
+            <div>
+                <div>
+                    <img src="#" alt="Imagem de usuário">
+                    <p>{{comentario.user}}</p>
+                </div>
+                <div>
+                    <p>{{comentario.content}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}
