@@ -176,9 +176,14 @@ footer{
     background-color: rgb(2, 196, 2);
     border-radius: 2px;
 }
+#postagem{
+    margin-top: 10px;
+}
 
 #postagem p{
-    text-align: justify;
+    padding: 30px;
+    margin: 10px;
+    font-size: 1.1em;
 }
 
 #imgpostagem{
